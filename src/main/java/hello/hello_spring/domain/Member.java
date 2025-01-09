@@ -1,5 +1,7 @@
 package hello.hello_spring.domain;
 
+import jakarta.persistence.*;
+
 /**
  * packageName    : hello.hello_spring.domain
  * fileName       : Member
@@ -7,7 +9,9 @@ package hello.hello_spring.domain;
  * date           : 2025-01-08
  * description    :
  */
+@Entity
 public class Member {
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY) // DB가 ID를 자동으로 생성해주는 것 -> Identity 전략
     private Long id;
     private String name;
 
