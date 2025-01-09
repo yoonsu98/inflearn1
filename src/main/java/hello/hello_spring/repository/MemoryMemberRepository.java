@@ -12,7 +12,6 @@ import java.util.*;
  * date           : 2025-01-08
  * description    : DB가 정해지지 않았다는 가정 하에 작성한 repository
  */
-@Repository
 public class MemoryMemberRepository implements MemberRepository{
     private static Map<Long, Member> store = new HashMap<>(); //static으로 선언하면 동시성 문제 때문에 Concurrent HashMap을 써야함!!
     private static long sequence = 0L; //이것도 동시성 문제때문에 원래는 atomic long으로 선언해야함..
